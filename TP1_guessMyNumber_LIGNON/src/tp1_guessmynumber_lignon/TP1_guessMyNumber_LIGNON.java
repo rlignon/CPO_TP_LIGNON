@@ -51,7 +51,7 @@ public class TP1_guessMyNumber_LIGNON {
             val1 = sc.nextDouble();
             compteur += 1;
             if (n == val1) {
-                System.out.println(n);
+                System.out.println(compteur);
                 System.out.println("Gagne");
                 result = true;
             } else if (n < val1) {
@@ -74,7 +74,7 @@ public class TP1_guessMyNumber_LIGNON {
                 return result;
             }
             if (n == val1) {
-                System.out.println(n);
+                System.out.println(compteur);
                 System.out.println("Gagne");
                 result = true;
             } else if (n < val1) {
@@ -95,7 +95,7 @@ public class TP1_guessMyNumber_LIGNON {
             val1 = sc.nextDouble();
             compteur += 1;
             if (n == val1) {
-                System.out.println(n);
+                System.out.println(compteur);
                 System.out.println("Gagne");
                 result = true;
             } else if (n < val1) {
