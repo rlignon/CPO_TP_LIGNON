@@ -8,14 +8,18 @@ package tp3_heroic_fantasy_lignon;
  *
  * @author ronan
  */
-public class Epee extends Arme{
-    int finesse;
-    public Epee(String nom,int niveau, int finesse) {
-        super(niveau, nom);
-        this.finesse = finesse;
-        if (finesse>100){
-            finesse=99;
-        }
+public class Guerrier extends Personnage {
+
+    boolean cheval;
+
+    public Guerrier(boolean cheval, int vieniv, String nom) {
+        super(vieniv, nom);
+        this.cheval = cheval;
+    }
+
+    public void setCheval(boolean cheval) {
+        this.cheval = cheval;
     }
     
+
 }

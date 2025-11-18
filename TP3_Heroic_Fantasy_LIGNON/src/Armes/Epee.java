@@ -2,20 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package tp3_heroic_fantasy_lignon;
+package Armes;
+
+import Armes.Arme;
 
 /**
  *
  * @author ronan
  */
-public class Baton extends Arme {
-    int age;
-
-    public Baton(String nom,int niveau, int age ) {
+public class Epee extends Arme{
+    int finesse;
+    public Epee(String nom,int niveau, int finesse) {
         super(niveau, nom);
-        this.age = age;
-        if (age>100){
-            age=99;
+        this.finesse = finesse;
+        if (finesse>100){
+            finesse=99;
         }
     }
     
