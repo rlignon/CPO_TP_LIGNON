@@ -36,29 +36,37 @@ public class TP3_Heroic_Fantasy_LIGNON {
             System.out.println(armes1.get(i));
         }
         System.out.println(armes1.size());
-        Magicien magicen1 = new Magicien(true, 65, "Gandalf");
-        Magicien magicen2 = new Magicien(false, 44, "Garcimore");
+        Magicien magicien1 = new Magicien(true, 65, "Gandalf");
+        Magicien magicien2 = new Magicien(false, 44, "Garcimore");
         Guerrier guerrier1 = new Guerrier(false, 78, "Conan");
         Guerrier guerrier2 = new Guerrier(true, 45, "Lannister");
         ArrayList<Personnage> personnage1 = new ArrayList<>();
-        personnage1.add(magicen1);
-        personnage1.add(magicen2);
+        personnage1.add(magicien1);
+        personnage1.add(magicien2);
         personnage1.add(guerrier1);
         personnage1.add(guerrier2);
         System.out.println(personnage1);
 // attribution arme guerrier
-        guerrier1.arme(Baton1);
-        guerrier1.arme(Epee1);
-        guerrier1.arme(Epee2);
-        guerrier1.arme_choose(Epee1);
-        System.out.println(guerrier1);
+        guerrier2.arme(Baton1);
+        guerrier2.arme(Epee1);
+        guerrier2.arme(Epee2);
+        guerrier2.arme_choose(Epee1);
+        System.out.println(guerrier2);
 // attribution arme magicien
-        magicen2.arme(Baton1);
-        magicen2.arme(Baton2);
-        magicen2.arme(Epee2);
+        magicien2.arme(Baton1);
+        magicien2.arme(Baton2);
+        magicien2.arme(Epee2);
+        System.out.println(magicien2);
 
-        
+        System.out.println("Personnages total : " + Personnage.nbPersonnages);
+        System.out.println("Guerriers : " + Guerrier.nbGuerriers);
+        System.out.println("Magiciens : " + Magicien.nbMagiciens);
+
+        magicien2.arme_choose(Baton1);
+        magicien2.attaquer(guerrier2);
+        guerrier2.attaquer(magicien2);
+        System.out.println(guerrier2);
+        System.out.println(magicien2);
+
     }
-    }
-
-
+}

@@ -11,14 +11,19 @@ import Armes.Arme;
  * @author ronan
  */
 public class Baton extends Arme {
+
     int age;
 
-    public Baton(String nom,int niveau, int age ) {
+    public Baton(String nom, int niveau, int age) {
         super(niveau, nom);
         this.age = age;
-        if (age>100){
-            age=99;
+        if (age > 100) {
+            age = 99;
         }
+            
     }
-    
+    public int getage() {
+        return age;
+    }
 }
+

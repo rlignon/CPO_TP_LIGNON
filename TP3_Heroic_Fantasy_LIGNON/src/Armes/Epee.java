@@ -10,14 +10,20 @@ import Armes.Arme;
  *
  * @author ronan
  */
-public class Epee extends Arme{
+public class Epee extends Arme {
+
     int finesse;
-    public Epee(String nom,int niveau, int finesse) {
+
+    public Epee(String nom, int niveau, int finesse) {
         super(niveau, nom);
         this.finesse = finesse;
-        if (finesse>100){
-            finesse=99;
+        if (finesse > 100) {
+            finesse = 99;
         }
+
     }
-    
+
+    public int getFinesse() {
+        return finesse;
+    }
 }

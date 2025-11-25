@@ -17,8 +17,11 @@ public abstract class Arme{
         if (niveau>100){
             niveau=100;
         }
-    
     }
+    public int getniveau() { 
+    return niveau;
+    }
+    
     @Override
     public String toString() {
         return "Arme{" + "niveau=" + niveau + ", nom=" + nom + '}';
