@@ -14,6 +14,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreQuiz.class.getName());
     ArrayList<Question> question = new ArrayList<Question>();
     private int indexQuestionCourante = 0;
+    int score_fin = 0;
 
     private String afficherQuestionCourante() {
         Question Q = question.get(indexQuestionCourante);
@@ -60,7 +61,6 @@ public class FenetreQuiz extends javax.swing.JFrame {
         btnRep4 = new javax.swing.JButton();
         result = new javax.swing.JLabel();
         next = new javax.swing.JButton();
-        score = new javax.swing.JLabel();
         fin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,8 +104,6 @@ public class FenetreQuiz extends javax.swing.JFrame {
             }
         });
 
-        score.setText("score : ");
-
         fin.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -131,10 +129,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
                                     .addComponent(next)
                                     .addComponent(btnRep2)
                                     .addComponent(btnRep4)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(score, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76)
-                                .addComponent(fin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(fin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -155,10 +150,8 @@ public class FenetreQuiz extends javax.swing.JFrame {
                     .addComponent(result)
                     .addComponent(next))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(score)
-                    .addComponent(fin))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(fin, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -170,6 +163,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
         int bonne_réponse = Q.Get_index();
         if (bonne_réponse == valeur_bouton) {
             result.setText("Bonne réponse");
+            score_fin += 1;
         } else {
             result.setText("Mauvaise réponse");
         }
@@ -182,9 +176,11 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private void btnRep2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep2ActionPerformed
         int valeur_bouton = 2;
         Question Q = question.get(indexQuestionCourante);
+
         int bonne_réponse = Q.Get_index();
         if (bonne_réponse == valeur_bouton) {
             result.setText("Bonne réponse");
+            score_fin += 1;
         } else {
             result.setText("Mauvaise réponse");
         }
@@ -192,6 +188,8 @@ public class FenetreQuiz extends javax.swing.JFrame {
         btnRep2.setEnabled(false);
         btnRep3.setEnabled(false);
         btnRep4.setEnabled(false);
+
+
     }//GEN-LAST:event_btnRep2ActionPerformed
 
     private void btnRep3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRep3ActionPerformed
@@ -200,6 +198,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
         int bonne_réponse = Q.Get_index();
         if (bonne_réponse == valeur_bouton) {
             result.setText("Bonne réponse");
+            score_fin += 1;
         } else {
             result.setText("Mauvaise réponse");
         }
@@ -215,6 +214,7 @@ public class FenetreQuiz extends javax.swing.JFrame {
         int bonne_réponse = Q.Get_index();
         if (bonne_réponse == valeur_bouton) {
             result.setText("Bonne réponse");
+            score_fin += 1;
         } else {
             result.setText("Mauvaise réponse");
         }
@@ -226,11 +226,13 @@ public class FenetreQuiz extends javax.swing.JFrame {
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
         indexQuestionCourante += 1;
-        if (indexQuestionCourante > 4) {
+
+        if (indexQuestionCourante < 2) {
             afficherQuestionCourante();
-        }
-        else{
-            
+        } else {
+            fin.setVisible(true);
+            int nombreDeQuestions = question.size();
+            fin.setText("Quiz terminé. Score : " + score_fin + " / " + nombreDeQuestions);
         }
     }//GEN-LAST:event_nextActionPerformed
 
@@ -268,6 +270,5 @@ public class FenetreQuiz extends javax.swing.JFrame {
     private javax.swing.JLabel lblQuestion;
     private javax.swing.JButton next;
     private javax.swing.JLabel result;
-    private javax.swing.JLabel score;
     // End of variables declaration//GEN-END:variables
 }

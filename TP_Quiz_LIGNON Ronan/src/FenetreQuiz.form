@@ -47,11 +47,7 @@
                                   <Component id="btnRep4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="score" min="-2" pref="37" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="fin" min="-2" pref="37" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="fin" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -80,11 +76,8 @@
                   <Component id="next" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="score" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="fin" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Component id="fin" pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -139,11 +132,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="score">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="score : "/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="fin">
       <Properties>
