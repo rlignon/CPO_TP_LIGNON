@@ -9,7 +9,7 @@ package Interface;
  * @author ronan
  */
 public class interface_cadenas extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(interface_cadenas.class.getName());
 
     /**
@@ -17,6 +17,11 @@ public class interface_cadenas extends javax.swing.JFrame {
      */
     public interface_cadenas() {
         initComponents();
+        int[] code = new int[4];
+        for (int i = 0; i < 4; i++) {
+            code[i] = (int) (Math.random() * 10); // chiffre entre 0 et 9
+        }
+        int [] codeteste=new int [4];
     }
 
     /**
@@ -164,7 +169,8 @@ public class interface_cadenas extends javax.swing.JFrame {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-        // TODO add your handling code here:
+
+
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
