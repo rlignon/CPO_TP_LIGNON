@@ -11,17 +11,16 @@ package Interface;
 public class interface_cadenas extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(interface_cadenas.class.getName());
+    
+    game Combi_actu = new game(0, 0, 0, 0);
+    
 
     /**
      * Creates new form interface_cadenas
      */
     public interface_cadenas() {
         initComponents();
-        int[] code = new int[4];
-        for (int i = 0; i < 4; i++) {
-            code[i] = (int) (Math.random() * 10); // chiffre entre 0 et 9
-        }
-        int [] codeteste=new int [4];
+
     }
 
     /**
@@ -67,10 +66,20 @@ public class interface_cadenas extends javax.swing.JFrame {
 
         up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         up_chiffre_3.setText("/\\");
+            up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    up_chiffre_3ActionPerformed(evt);
+                }
+            });
             getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 80, 40));
 
             up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
             up_chiffre_4.setText("/\\");
+                up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        up_chiffre_4ActionPerformed(evt);
+                    }
+                });
                 getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 80, 40));
 
                 up_chiffre_2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -93,18 +102,38 @@ public class interface_cadenas extends javax.swing.JFrame {
 
                         down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                         down_chiffre_4.setText("\\/");
+                        down_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 80, 40));
 
                         down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                         down_chiffre_1.setText("\\/");
+                        down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_1ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, 40));
 
                         down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                         down_chiffre_2.setText("\\/");
+                        down_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_2ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 80, 40));
 
                         down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
                         down_chiffre_3.setText("\\/");
+                        down_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_3ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 80, 40));
 
                         texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
@@ -169,17 +198,48 @@ public class interface_cadenas extends javax.swing.JFrame {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-
-
+        Combi_actu.up(0);
+        texte_chiffre_1.setText(Combi_actu.getCase(0) + "");
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
-        // TODO add your handling code here:
+        Combi_actu.up(1);
+        texte_chiffre_2.setText(Combi_actu.getCase(1) + "");        // TODO add your handling code here:
     }//GEN-LAST:event_up_chiffre_2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
+        Combi_actu.down(0);
+        texte_chiffre_1.setText(Combi_actu.getCase(0) + "");// TODO add your handling code here:
+    }//GEN-LAST:event_down_chiffre_1ActionPerformed
+
+    private void down_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_2ActionPerformed
+        Combi_actu.down(1);
+        texte_chiffre_2.setText(Combi_actu.getCase(1) + "");// TODO add your handling code here:
+    }//GEN-LAST:event_down_chiffre_2ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+        Combi_actu.up(2);
+        texte_chiffre_3.setText(Combi_actu.getCase(2) + "");// TODO add your handling code here:
+    }//GEN-LAST:event_up_chiffre_3ActionPerformed
+
+    private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
+        Combi_actu.up(3);
+        texte_chiffre_4.setText(Combi_actu.getCase(3) + "");        // TODO add your handling code here:
+    }//GEN-LAST:event_up_chiffre_4ActionPerformed
+
+    private void down_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_3ActionPerformed
+        Combi_actu.down(2);
+        texte_chiffre_3.setText(Combi_actu.getCase(2) + "");// TODO add your handling code here:
+    }//GEN-LAST:event_down_chiffre_3ActionPerformed
+
+    private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
+        Combi_actu.down(3);
+        texte_chiffre_4.setText(Combi_actu.getCase(3) + ""); // TODO add your handling code here:
+    }//GEN-LAST:event_down_chiffre_4ActionPerformed
 
     /**
      * @param args the command line arguments
