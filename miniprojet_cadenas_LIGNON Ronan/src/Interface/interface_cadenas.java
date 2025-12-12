@@ -11,14 +11,14 @@ package Interface;
 public class interface_cadenas extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(interface_cadenas.class.getName());
-    
+
     game Combi_actu = new game(0, 0, 0, 0);
-    
 
     /**
      * Creates new form interface_cadenas
      */
     public interface_cadenas() {
+
         initComponents();
 
     }
@@ -192,6 +192,11 @@ public class interface_cadenas extends javax.swing.JFrame {
                         getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, -1, -1));
 
                         bouton_recommencer.setText("Recommencer");
+                        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_recommencerActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, -1, 40));
 
                         pack();
@@ -208,7 +213,15 @@ public class interface_cadenas extends javax.swing.JFrame {
     }//GEN-LAST:event_up_chiffre_2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        texte_nb_chiffres_bas.setText(Combi_actu.tester(1) + "");
+        texte_nb_chiffres_exacts.setText(Combi_actu.tester(0) + "");
+        texte_nb_chiffres_haut.setText(Combi_actu.tester(2) + "");
+        int essaie = Combi_actu.score();
+        texte_score.setText(essaie + "sur 5");// TODO add your handling code here:
+        if (essaie == 5) {
+            jButton1.setEnabled(false);
+            texte_score.setText("Perdu");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
@@ -240,6 +253,20 @@ public class interface_cadenas extends javax.swing.JFrame {
         Combi_actu.down(3);
         texte_chiffre_4.setText(Combi_actu.getCase(3) + ""); // TODO add your handling code here:
     }//GEN-LAST:event_down_chiffre_4ActionPerformed
+
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
+        Combi_actu.restart();
+
+        texte_chiffre_1.setText(Combi_actu.getCase(0) + "");
+        texte_chiffre_2.setText(Combi_actu.getCase(1) + "");
+        texte_chiffre_3.setText(Combi_actu.getCase(2) + "");
+        texte_chiffre_4.setText(Combi_actu.getCase(3) + "");
+        texte_score.setText(0 + " sur 5");
+        texte_nb_chiffres_exacts.setText(0 + "");
+        texte_nb_chiffres_haut.setText(0 + "");
+        texte_nb_chiffres_bas.setText(0 + "");    
+        jButton1.setEnabled(true);// TODO add your handling code here:
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     /**
      * @param args the command line arguments
